@@ -4,9 +4,9 @@ import Image from "next/image";
 const TeamCard = ({ teamMembers, i }) => {
   return (
     <>
-      <div className="min-h-0  mx-5 p-5 text-black">
-        <div className="mt-16 p-3  mx-auto">
-          <h1 className="text-3xl text-center   text-blue-900 leading-10 font-bold">
+      <div className="min-h-0 m-5 flex justify-center flex-wrap items-center  p-5 text-black">
+        <div className=" p-3 w-64 ">
+          <h1 className="text-3xl   text-blue-900 leading-10 font-bold">
             Meet our team
           </h1>
           <p className="leading-10">
@@ -15,16 +15,20 @@ const TeamCard = ({ teamMembers, i }) => {
             highest heights in their career.
           </p>
         </div>
-        <div className="flex sm:flex-row flex-col justify-center gap-3">
+        <div className="grid sm:grid-cols-1 grid-cols-1  p-5  ">
           {teamMembers?.map((teamMember) => {
             return (
-              <div key={i}>
-                <div className="p-3 m-5 mx-auto flex justify-center  bg-blue-900">
-                  <div className="text-center ">
-                    <Image className="" src={teamMember.image} width="200" />
-                    <p className="uppercase">{teamMember.name}</p>
-                    <p className="uppercase ">{teamMember.position}</p>
-                  </div>
+              <div className=" flex items-center justify-center " key={i}>
+                <Image
+                  className="rounded-full overflow-hidden p-5 m-3"
+                  src={teamMember.image}
+                  width="200"
+                />
+                <div className="p-3 ">
+                  <p className="uppercase ">{teamMember.name}</p>
+                  <p className="uppercase text-center text-blue-900 font-bold">
+                    {teamMember.position}
+                  </p>
                 </div>
               </div>
             );

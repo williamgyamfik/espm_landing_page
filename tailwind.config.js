@@ -16,6 +16,7 @@ module.exports = {
     // colors: {
     //   headingColor: " #094396",
     // },
+    backgroundImage: { parallax: "url('../public/images/bgImage2.jpg')" },
   },
   // plugins: [require("daisyui", "flowbite/plugin")],
   plugins: [require("daisyui", "flowbite/plugin")],

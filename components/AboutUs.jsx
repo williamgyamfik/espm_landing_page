@@ -2,8 +2,8 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="   mt-16   w-full bg-transparent  text-black  ">
-      <div className="mt-16 p-3 mx-auto">
+    <div className="mt-16  text-white">
+      <div className=" p-3 mx-auto">
         <h1 className="text-3xl text-center sm:text-left text-blue-900 font-bold">
           Our story
         </h1>
@@ -23,7 +23,7 @@ const AboutUs = () => {
         </p>
       </div>
 
-      <div className="mt-16 p-3   mx-auto">
+      <div className="mt-16 p-3   ">
         <h1 className="text-3xl text-center sm:text-left text-blue-900 leading-10 font-bold">
           What we believe in
         </h1>
@@ -36,7 +36,7 @@ const AboutUs = () => {
         </p>
       </div>
 
-      <div className="mt-16 p-3  mx-auto">
+      <div className="mt-16 p-3  ">
         <h1 className="text-3xl text-center sm:text-left text-blue-900 leading-10 font-bold">
           Our mission
         </h1>

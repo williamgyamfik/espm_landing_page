@@ -24,7 +24,7 @@ const Team = () => {
     },
     {
       name: "Kwabena Nuamah Ayimadu ",
-      position: "Chief Accountant ",
+      position: " Accountant ",
       image: accountant,
       email: "ayimadukwabena@live.com",
       linkedIn: "https://www.linkedin.com/in/kwabena-nuamah-ayimadu-59483574",

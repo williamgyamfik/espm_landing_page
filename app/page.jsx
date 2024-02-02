@@ -59,21 +59,21 @@ export default function Home() {
         <OurServices />
       </section>
 
-      <section className="sm:-z-10 min-h-0 sm:sticky sm:top-5 " id="about">
-        {/* <div className="min-h-0  ">
-        </div> */}
-        <Image src={bgImage2} alt="background image" />
+      <section
+        className="relative flex items-center justify-center h-min-0 bg-parallax bg-fixed bg-cover overflow-no-scroll opacity-100 "
+        id="about"
+      >
+        <div className="absolute inset-0 bg-black opacity-25"></div>
+        <div className="relative z-20">
+          <AboutUs />
+        </div>
       </section>
 
-      <section>
-        <AboutUs />
-      </section>
-
-      <section className="min-h-0 bg-white mt-16">
+      <section className="min-h-0 bg-white ">
         <Team />
       </section>
 
-      <section className=" bg-blue-900  -z-10 " id="contact">
+      <section className=" bg-blue-900   " id="contact">
         <Contact />
       </section>
     </div>
