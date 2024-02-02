@@ -60,7 +60,7 @@ export default function Home() {
       </section>
 
       <section
-        className="relative flex items-center justify-center h-min-0 bg-parallax bg-fixed bg-cover overflow-no-scroll opacity-100 "
+        className="relative flex items-center justify-center -z-10 h-min-0 bg-parallax bg-fixed bg-cover overflow-no-scroll opacity-100 "
         id="about"
       >
         <div className="absolute inset-0 bg-black opacity-25"></div>

@@ -5,7 +5,7 @@ const TeamCard = ({ teamMembers, i }) => {
   return (
     <>
       <div className="min-h-0 m-5 flex justify-center flex-wrap items-center  p-5 text-black">
-        <div className=" p-3 w-64 ">
+        <div className=" p-2 w-64 ">
           <h1 className="text-3xl   text-blue-900 leading-10 font-bold">
             Meet our team
           </h1>
@@ -22,7 +22,7 @@ const TeamCard = ({ teamMembers, i }) => {
                 <Image
                   className="rounded-full overflow-hidden p-5 m-3"
                   src={teamMember.image}
-                  width="200"
+                  width="250"
                 />
                 <div className="p-3 ">
                   <p className="uppercase ">{teamMember.name}</p>
