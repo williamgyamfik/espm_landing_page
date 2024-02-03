@@ -10,6 +10,7 @@ import Team from "../components/Team";
 import GetStarted from "@/components/GetStarted";
 import bgImage2 from "../public/images/bgImage2.jpg";
 import Subscribe from "@/components/Subscribe";
+import Spinner from "@/components/Spinner";
 
 export default function Home() {
   return (
@@ -38,18 +39,18 @@ export default function Home() {
             </div>
           </div>
           <div className=" ">
-            <Image src={hero} alt="hero image" width="500" />
+            <Image src={hero} alt="hero image" priority="true" width="500" />
           </div>
         </div>
 
-        <dialog id="my_modal_1" className=" min-h-0 modal">
+        <dialog id="my_modal_1" className=" min-h-0 modal bg-transparent ">
           {/* <div className="modal-box w-full max-w-full bg-black ">
             <p className="py-4 text-center text-2xl font-bold">
               ESPM Sign up form for talent managment
             </p> */}
           {/* <div className="modal-action"> */}
 
-          <div className="  overflow-no-scroll-bar">
+          <div className="  max-w-full m-10 p-5 overflow-no-scroll-bar">
             <SignUpForm />
           </div>
 
@@ -57,6 +58,8 @@ export default function Home() {
           {/* </div> */}
         </dialog>
       </section>
+
+      <Spinner />
 
       <section className="bg-blue-900 min-h-0 text-center" id="services">
         <h1 className="text-3xl p-5 text-white font-bold">Our Services</h1>

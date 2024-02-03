@@ -1,16 +1,62 @@
 // "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Label } from "flowbite-react";
+import { supabase } from "../Utils/supabaseClient";
+import Spinner from "./Spinner";
 
-const SignUphtmlForm = () => {
+const SignUpForm = () => {
+  const [showSpinner, setShowSpinner] = useState(false);
+
+  const [userInput, setUserInput] = useState({
+    first_name: "",
+    last_name: "",
+    Date_of_birth: "",
+    gender: "",
+    email: "",
+    phone: "",
+    video_link: "",
+    sportsType: "",
+  });
+
+  const userInputHandler = (e) => {
+    const { name, value } = e.target;
+    setUserInput({ ...userInput, [name]: value });
+  };
+
+  const signUpHandler = async (e) => {
+    e.preventDefault();
+    setShowSpinner(true);
+    try {
+      const { data, error } = await supabase
+        .from("userProfile")
+        .insert([
+          {
+            first_name: userInput.first_name,
+            last_name: userInput.last_name,
+            email: userInput.last_name,
+            video_link: userInput.video_link,
+            gender: userInput.gender,
+            phone: userInput.phone,
+            age: userInput.age,
+            sports_type: userInput.sportsType,
+          },
+        ])
+        .select("*");
+    } catch (error) {}
+    setShowSpinner(false);
+  };
+
+  if (showSpinner) {
+    <Spinner />;
+  }
   return (
     <div className=" flex flex-col flex-1 pt-4 sm:px-0  ">
-      <div className="flex flex-1 flex-col p-2 text-sm m-10  shadow-xl text-blue-900 bg-blue-900">
+      <div className="flex flex-1 flex-col p-2 text-sm   shadow-xl text-blue-900 bg-blue-900">
         <p className="py-4 text-center text-2xl font-bold text-white">
           ESPM talent Sign up form
         </p>
         <div className="flex align-center justify-center  ">
-          <form className="mx-2 w-full">
+          <form className="mx-2 w-full" onSubmit={signUpHandler}>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
               <div className="flex flex-col flex-wrap ">
                 <div className="mb-2 block">
@@ -21,6 +67,8 @@ const SignUphtmlForm = () => {
                   id="firstName1"
                   type="text"
                   name="first_name"
+                  onChange={userInputHandler}
+                  value={userInput?.first_name}
                   required
                 />
               </div>
@@ -33,6 +81,8 @@ const SignUphtmlForm = () => {
                   id="lastName1"
                   type="text"
                   name="last_name"
+                  onChange={userInputHandler}
+                  value={userInput?.last_name}
                   required
                 />
               </div>
@@ -45,6 +95,8 @@ const SignUphtmlForm = () => {
                   id="email1"
                   type="email"
                   name="email"
+                  onChange={userInputHandler}
+                  value={userInput?.email}
                   required
                 />
               </div>
@@ -54,10 +106,12 @@ const SignUphtmlForm = () => {
                   <Label htmlFor="dob1" value="Date of Birth" />
                 </div>
                 <input
-                  className="bg-white p-2 text-blue-900"
+                  className=" p-2 bg-white "
                   id="dob1"
                   type="date"
-                  name="Date of birth"
+                  name="Date_of_birth"
+                  onChange={userInputHandler}
+                  value={userInput?.Date_of_birth}
                   required
                 />
               </div>
@@ -69,9 +123,11 @@ const SignUphtmlForm = () => {
                   id="gender1"
                   className="bg-white p-2"
                   name="gender"
+                  onChange={userInputHandler}
+                  value={userInput?.gender}
                   required
                 >
-                  <option defaultValue="select" disabled selected="select">
+                  <option defaultValue="select" disabled>
                     Select....
                   </option>
                   <option value="Female">Female</option>
@@ -89,6 +145,8 @@ const SignUphtmlForm = () => {
                   id="Phone1"
                   type="tel"
                   name="phone"
+                  onChange={userInputHandler}
+                  value={userInput?.phone}
                   required
                 />
               </div>
@@ -101,6 +159,8 @@ const SignUphtmlForm = () => {
                   id="sportsType"
                   className="bg-white p-2"
                   name="sportsType"
+                  onChange={userInputHandler}
+                  value={userInput?.sportsType}
                 >
                   <option value="Soccer">Soccer</option>
                   <option value="Boxing">Boxing</option>
@@ -117,14 +177,19 @@ const SignUphtmlForm = () => {
                 id="video_link1"
                 type="text"
                 name="video_link"
+                onChange={userInputHandler}
+                value={userInput?.video_link}
                 required
               />
             </div>
             <div className="flex flex-wrap gap-5 my-5 justify-center center-align">
-              <button className="btn   w-64 mx-auto block rounded-none focus:outline-blue-900 text-blue-900 border-blue-900 hover:text-white bg-white hover:bg-blue-800">
+              <button className="btn w-64 mx-auto block rounded-none focus:outline-blue-900 text-blue-900 border-blue-900 hover:text-white bg-white hover:bg-blue-800">
                 SAVE
               </button>
-              <button className="btn   w-64 mx-auto block rounded-none focus:outline-blue-900 text-blue-900 border-blue-900 hover:text-white bg-white hover:bg-red-500">
+              <button
+                className="btn w-64 mx-auto block rounded-none focus:outline-blue-900 text-blue-900 border-blue-900 hover:text-white bg-white hover:bg-red-500"
+                onClick={() => document.getElementById("my_modal_1").close()}
+              >
                 CLOSE
               </button>
             </div>
@@ -135,4 +200,4 @@ const SignUphtmlForm = () => {
   );
 };
 
-export default SignUphtmlForm;
+export default SignUpForm;

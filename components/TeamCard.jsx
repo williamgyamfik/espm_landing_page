@@ -18,10 +18,14 @@ const TeamCard = ({ teamMembers, i }) => {
         <div className="grid sm:grid-cols-1 grid-cols-1  p-5  ">
           {teamMembers?.map((teamMember) => {
             return (
-              <div className=" flex items-center justify-center " key={i}>
+              <div
+                className=" flex items-center justify-center "
+                key={teamMember.id}
+              >
                 <Image
                   className="rounded-full overflow-hidden p-5 m-3"
                   src={teamMember.image}
+                  alt="team images"
                   width="250"
                 />
                 <div className="p-3 ">

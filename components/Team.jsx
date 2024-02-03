@@ -8,6 +8,7 @@ import TeamCard from "./TeamCard";
 const Team = () => {
   const teamMembers = [
     {
+      id: 1,
       name: " Roosevelt Asamoah",
       position: "Ceo",
       image: founder,
@@ -16,6 +17,7 @@ const Team = () => {
     },
 
     {
+      id: 2,
       name: "David Nogotey",
       position: "Scout",
       image: scout,
@@ -23,19 +25,16 @@ const Team = () => {
       linkedIn: "https://www.linkedin.com/in/david-xornamtey-6a454679",
     },
     {
+      id: 3,
       name: "Kwabena Nuamah Ayimadu ",
-      position: " Accountant ",
+      position: "Accountant ",
       image: accountant,
       email: "ayimadukwabena@live.com",
       linkedIn: "https://www.linkedin.com/in/kwabena-nuamah-ayimadu-59483574",
     },
   ];
 
-  return (
-    // "grid grid-cols-1 sm:grid-cols-3 place-items-center gap-4 mt-14 p-5"
-
-    <TeamCard teamMembers={teamMembers} />
-  );
+  return <TeamCard teamMembers={teamMembers} />;
 };
 
 export default Team;
