@@ -8,70 +8,76 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const OurServices = () => {
   return (
-    <div className=" text-white w-full p-5 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-5 ">
-      <div className="mt-5 flex flex-col">
-        <div className="">
-          <FontAwesomeIcon icon={faUser} className="fa-3x" width="100" />
+    <div className=" text-white w-full p-5 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-5 ">
+      <div className="flex flex-col items-center">
+        <div className="p-2">
+          <FontAwesomeIcon icon={faUser} className="fa-2x" />
         </div>
-        <h1 className="text-xl sm:text-3xl text-center ">Scouting</h1>
-        <p className="p-3 text-left">
-          We develop a deep understanding of our clients’ vision, conduct
-          context specific evaluation of the marketplace, and use our extensive
-          network to advise on the best synergies between brand strategy and
-          rights holder assets.
-        </p>
+        <div>
+          <h1 className="text-xl sm:text-3xl text-center ">Scouting</h1>
+          <p className="p-3 text-left leading-2">
+            We develop a deep understanding of our clients’ vision, conduct
+            context specific evaluation of the marketplace, and use our
+            extensive network to advise on the best synergies between brand
+            strategy and rights holder assets.
+          </p>
+        </div>
       </div>
 
-      <div className="mt-5 flex flex-col">
-        <div className="">
-          <FontAwesomeIcon
-            icon={faArrowTrendUp}
-            className="fa-3x"
-            width="100"
-          />
+      <div className="flex flex-col">
+        <div className="p-2">
+          <FontAwesomeIcon icon={faArrowTrendUp} className="fa-2x" />
         </div>
-        <h1 className="text-xl sm:text-3xl text-center  ">Marketing</h1>
-        <p className="p-3 text-left">
-          We explore the elaborate marketing needs and digital innovations
-          impacting events, teams, players, and endorsements.
-        </p>
+        <div>
+          <h1 className="text-xl sm:text-3xl text-center  ">Marketing</h1>
+          <p className="p-3 text-left leading-2">
+            We explore the elaborate marketing needs and digital innovations
+            impacting events, teams, players, and endorsements.
+          </p>
+        </div>
       </div>
 
-      <div className="mt-5 flex flex-col">
-        <div className="">
-          <FontAwesomeIcon icon={faUsers} className="fa-3x" width="100" />
+      <div className="flex flex-col">
+        <div className="p-2">
+          <FontAwesomeIcon icon={faUsers} className="fa-2x" />
         </div>
-        <h1 className="text-xl sm:text-3xl text-center  ">Collaboration</h1>
+        <div>
+          <h1 className="text-xl sm:text-3xl text-center  ">Collaboration</h1>
 
-        <p className="p-3 text-left">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, vitae.
-        </p>
+          <p className="p-3 text-left leading-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
+            vitae.
+          </p>
+        </div>
       </div>
 
-      <div className="mt-5  flex flex-col">
-        <div className="">
-          <FontAwesomeIcon
-            icon={faHandshakeSimple}
-            className="fa-3x"
-            width="100"
-          />
+      <div className="flex flex-col">
+        <div className="p-2">
+          {" "}
+          <FontAwesomeIcon icon={faHandshakeSimple} className="fa-2x" />
         </div>
-        <h1 className="text-xl sm:text-3xl text-center  ">
-          Contract Negotiation
-        </h1>
-        <p className="p-3 text-left">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, vitae.
-        </p>
+        <div>
+          <h1 className="text-xl sm:text-3xl text-center  ">
+            Contract Negotiation
+          </h1>
+          <p className="p-3 text-left leading-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
+            vitae.
+          </p>
+        </div>
       </div>
 
-      <div className="mt-5 flex flex-col">
-        <div className="">
-          <FontAwesomeIcon icon={faPhone} className="fa-3x" width="100" />
+      <div className="flex flex-col">
+        <div className="p-2">
+          <FontAwesomeIcon icon={faPhone} className="fa-2x" />
         </div>
-        <h1 className="text-xl sm:text-3xl text-center  ">Support</h1>
-        <p className="p-3 text-left">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, vitae.
-        </p>
+        <div>
+          <h1 className="text-xl sm:text-3xl text-center  ">Support</h1>
+          <p className="p-3 text-left">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
+            vitae.
+          </p>
+        </div>
       </div>
     </div>
   );

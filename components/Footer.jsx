@@ -1,11 +1,22 @@
+"use client";
 import React from "react";
 
 const Footer = () => {
+  const date = new Date();
+  const year = date.getFullYear();
+
   return (
-    <footer className="footer footer-center p-10 bg-headingColor text-base-content rounded  ">
+    <footer className="footer footer-center p-10 r text-blue-900 rounded  ">
       <nav className="grid grid-flow-col gap-4">
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
+        <a className="scroll-link" href="#about">
+          About us
+        </a>
+        <a className="scroll-link" href="#contact">
+          Contact
+        </a>
+        <a className="scroll-link" href="#services">
+          Our services
+        </a>
       </nav>
       <nav>
         <div className="grid grid-flow-col gap-4">
@@ -45,7 +56,10 @@ const Footer = () => {
         </div>
       </nav>
       <aside>
-        <p>Copyright © 2024 - All right reserved by ACME Industries Ltd</p>
+        <p>
+          Copyright © {year} - All right reserved by Euphoria Sports Management
+          (ESPM)
+        </p>
       </aside>
     </footer>
   );

@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import Link from "next/link";
 
 const Subscribe = () => {
   const [input, setInput] = useState("");
 
-  const formHandler = (e) => {
+  const submitHandler = (e) => {
     e.preventDefault();
-    setInput("");
   };
 
   return (
@@ -20,22 +18,22 @@ const Subscribe = () => {
         </p>
       </div>
 
-      <div className="flex items-center align-center justify-center flex-wrap">
-        <div className="p-5">
-          <input
-            className="h-12 w-64 text-center text-blue-900 bg-white border border-blue-900"
-            placeholder="Enter Email address here"
-            type="text"
-          />
-        </div>
-        <div className="p-5">
-          <Link href="/signup">
-            <button className="btn   w-64 mx-auto block rounded-none text-blue-900 border-blue-900 hover:text-white bg-white hover:bg-blue-800">
+      <form onSubmit={submitHandler}>
+        <div className="flex items-center align-center justify-center flex-wrap">
+          <div className="p-5">
+            <input
+              className="h-12 w-64 text-center text-blue-900 bg-white border border-blue-900 rounded-none"
+              placeholder="Enter e-mail address here"
+              type="text"
+            />
+          </div>
+          <div className="p-5">
+            <button className="btn   w-64 mx-auto block rounded-none focus:outline-blue-900 text-blue-900 border-blue-900 hover:text-white bg-white hover:bg-blue-800">
               Sign up
             </button>
-          </Link>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

@@ -14,7 +14,7 @@ import Subscribe from "@/components/Subscribe";
 export default function Home() {
   return (
     <div>
-      <section className="h-auto" id="home">
+      <section className="min-h-0" id="home">
         <div className=" w-full flex sm:flex-row items-center justify-center flex-wrap  p-5 leading-loose">
           <div className="p-5 lg:w-72 w-full">
             <div className=" ">
@@ -42,22 +42,22 @@ export default function Home() {
           </div>
         </div>
 
-        <dialog id="my_modal_1" className="modal ">
-          <div className="modal-box w-full max-w-full bg-white ">
-            <p className="py-4 text-center ">
+        <dialog id="my_modal_1" className=" min-h-0 modal">
+          {/* <div className="modal-box w-full max-w-full bg-black ">
+            <p className="py-4 text-center text-2xl font-bold">
               ESPM Sign up form for talent managment
-            </p>
-            <div className="modal-action">
-              {/* <form method="dialog"> */}
-              <SignUpForm />
-              {/* </form> */}
-            </div>
-          </div>
+            </p> */}
+          {/* <div className="modal-action"> */}
+
+          <SignUpForm />
+
+          {/* </div> */}
+          {/* </div> */}
         </dialog>
       </section>
 
       <section className="bg-blue-900 min-h-0 text-center" id="services">
-        <h1 className="text-5xl p-5 text-white font-bold">Our Services</h1>
+        <h1 className="text-3xl p-5 text-white font-bold">Our Services</h1>
         <OurServices />
       </section>
 
@@ -84,6 +84,12 @@ export default function Home() {
       </section>
 
       <section className=" bg-blue-900   " id="contact">
+        <div className="p-5">
+          <h1 className="text-3xl text-white text-center font-bold">
+            Contact{" "}
+          </h1>
+        </div>
+
         <Contact />
       </section>
     </div>

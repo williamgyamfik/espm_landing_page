@@ -1,24 +1,23 @@
 // "use client";
 import React from "react";
-import { Button, Label, TextInput } from "flowbite-react";
+import { Label } from "flowbite-react";
 
 const SignUphtmlForm = () => {
   return (
-    <div className=" flex flex-col flex-1 pt-4 sm:px-0 min-h-0 ">
-      <div className="flex flex-1 flex-col p-2 shadow-xl">
-        <div className="flex align-center justify-center mt-10 ">
-          <form className="mx-2  w-full  text-black">
+    <div className=" flex flex-col flex-1 pt-4 sm:px-0  ">
+      <div className="flex flex-1 flex-col p-2 text-sm shadow-xl text-blue-900 bg-blue-900">
+        <p className="py-4 text-center text-2xl font-bold text-white">
+          ESPM talent Sign up form
+        </p>
+        <div className="flex align-center justify-center  ">
+          <form className="mx-2  w-full ">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
               <div className="flex flex-col flex-wrap ">
                 <div className="mb-2 block">
-                  <Label
-                    className="text-black"
-                    htmlFor="firstName1"
-                    value="First Name"
-                  />
+                  <Label className="" htmlFor="firstName1" value="First Name" />
                 </div>
-                <TextInput
-                  className=""
+                <input
+                  className="bg-white p-2"
                   id="firstName1"
                   type="text"
                   name="first_name"
@@ -29,7 +28,8 @@ const SignUphtmlForm = () => {
                 <div className="mb-2 block">
                   <Label htmlFor="lastName1" value="Surname" />
                 </div>
-                <TextInput
+                <input
+                  className="bg-white p-2"
                   id="lastName1"
                   type="text"
                   name="last_name"
@@ -40,46 +40,93 @@ const SignUphtmlForm = () => {
                 <div className="mb-2 block">
                   <Label htmlFor="email1" value="Email" />
                 </div>
-                <TextInput id="email1" type="email" name="email" />
+                <input
+                  className="bg-white p-2"
+                  id="email1"
+                  type="email"
+                  name="email"
+                  required
+                />
               </div>
 
               <div className="flex flex-col flex-wrap ">
                 <div className="mb-2 block">
-                  <Label htmlFor="age1" value="Age" />
+                  <Label htmlFor="dob1" value="Date of Birth" />
                 </div>
-                <TextInput id="age1" type="text" name="age" required />
+                <input
+                  className="bg-white p-2 text-blue-900"
+                  id="dob1"
+                  type="date"
+                  name="Date of birth"
+                  required
+                />
               </div>
               <div className="flex flex-col flex-wrap ">
                 <div className="mb-2 block">
                   <Label htmlFor="gender1" value="Gender" />
                 </div>
-                <TextInput id="gender1" type="text" name="gender" required />
+                <select
+                  id="gender1"
+                  className="bg-white p-2"
+                  name="gender"
+                  required
+                >
+                  <option defaultValue="select" disabled selected="select">
+                    Select....
+                  </option>
+                  <option value="Female">Female</option>
+                  <option value="Male">Male</option>
+                  <option value="Prefer not to say">Prefer not to say</option>
+                </select>
               </div>
+
               <div className="flex flex-col flex-wrap ">
                 <div className="mb-2 block">
                   <Label htmlFor="Phone1" value="Phone" />
                 </div>
-                <TextInput id="Phone1" type="number" name="phone" required />
+                <input
+                  className="bg-white p-2"
+                  id="Phone1"
+                  type="tel"
+                  name="phone"
+                  required
+                />
               </div>
+
               <div className="flex flex-col flex-wrap ">
                 <div className="mb-2 block">
                   <Label htmlFor="sports_type1" value="Sports type" />
                 </div>
-                <TextInput
-                  id="sports_type1"
-                  type="text"
-                  name="sports_type"
-                  required
-                />
+                <select
+                  id="sportsType"
+                  className="bg-white p-2"
+                  name="sportsType"
+                >
+                  <option value="Soccer">Soccer</option>
+                  <option value="Boxing">Boxing</option>
+                  <option value="Other">Other</option>
+                </select>
               </div>
             </div>
-            <div className="flex flex-wrap gap-5 mt-10 justify-center center-align">
-              <Button type="submit" className="w-96 bg-emerald-500">
+            <div className="flex flex-col mt-5">
+              <div className="mb-2 block">
+                <Label htmlFor="video_link1" value="Video link" />
+              </div>
+              <input
+                className="bg-white p-2"
+                id="video_link1"
+                type="text"
+                name="video_link"
+                required
+              />
+            </div>
+            <div className="flex flex-wrap gap-5 my-5 justify-center center-align">
+              <button className="btn   w-64 mx-auto block rounded-none focus:outline-blue-900 text-blue-900 border-blue-900 hover:text-white bg-white hover:bg-blue-800">
                 SAVE
-              </Button>
-              <Button className="w-96 btn bg-red-500" color="failure">
+              </button>
+              <button className="btn   w-64 mx-auto block rounded-none focus:outline-blue-900 text-blue-900 border-blue-900 hover:text-white bg-white hover:bg-red-500">
                 CLOSE
-              </Button>
+              </button>
             </div>
           </form>
         </div>

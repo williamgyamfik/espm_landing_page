@@ -7,7 +7,7 @@ const Contact = () => {
         <section className="flex flex-col md:flex-row justify-center mx-auto p-5">
           <div>
             <div className="px-5 mb-5">
-              <h1 className="text-4xl  font-bold">You got questions?</h1>
+              <h1 className="text-2xl  font-bold">You got questions?</h1>
             </div>
             <div className="px-5 mb-5">
               <p>
