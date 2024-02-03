@@ -40,6 +40,6 @@ padding: 0;
   transform-origin: 0 0 ;
 }
 
-.overflow-no-scroll::-webkit-scrollbar { 
+.overflow-no-scroll-bar::-webkit-scrollbar { 
   display: none; 
 } 

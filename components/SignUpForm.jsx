@@ -5,12 +5,12 @@ import { Label } from "flowbite-react";
 const SignUphtmlForm = () => {
   return (
     <div className=" flex flex-col flex-1 pt-4 sm:px-0  ">
-      <div className="flex flex-1 flex-col p-2 text-sm shadow-xl text-blue-900 bg-blue-900">
+      <div className="flex flex-1 flex-col p-2 text-sm m-10  shadow-xl text-blue-900 bg-blue-900">
         <p className="py-4 text-center text-2xl font-bold text-white">
           ESPM talent Sign up form
         </p>
         <div className="flex align-center justify-center  ">
-          <form className="mx-2  w-full ">
+          <form className="mx-2 w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
               <div className="flex flex-col flex-wrap ">
                 <div className="mb-2 block">

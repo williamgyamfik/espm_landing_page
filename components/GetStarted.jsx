@@ -39,11 +39,9 @@ const GetStarted = () => {
         </div>
       </div>
       <div className="flex justify-center mt-10">
-        <Link href="/signup">
-          <button className="btn w-64 mx-auto block rounded-none text-blue-900 hover:text-white bg-white hover:bg-blue-800">
-            Sign up
-          </button>
-        </Link>
+        <button className="btn w-64 mx-auto block rounded-none text-blue-900 hover:text-white bg-white hover:bg-blue-800">
+          Sign up
+        </button>
       </div>
     </div>
   );
