@@ -6,8 +6,10 @@ import SignUpForm from "../components/SignUpForm";
 import AboutUs from "../components/AboutUs";
 import OurServices from "../components/OurServices";
 import Contact from "../components/Contact";
-import bgImage2 from "../public/images/bgImage2.jpg";
 import Team from "../components/Team";
+import GetStarted from "@/components/GetStarted";
+import bgImage2 from "../public/images/bgImage2.jpg";
+import Subscribe from "@/components/Subscribe";
 
 export default function Home() {
   return (
@@ -55,7 +57,7 @@ export default function Home() {
       </section>
 
       <section className="bg-blue-900 min-h-0 text-center" id="services">
-        <h1 className="text-5xl p-5 text-white">Our Services</h1>
+        <h1 className="text-5xl p-5 text-white font-bold">Our Services</h1>
         <OurServices />
       </section>
 
@@ -71,6 +73,14 @@ export default function Home() {
 
       <section className="min-h-0 bg-white ">
         <Team />
+      </section>
+
+      <section className="bg-blue-900">
+        <GetStarted />
+      </section>
+
+      <section>
+        <Subscribe />
       </section>
 
       <section className=" bg-blue-900   " id="contact">

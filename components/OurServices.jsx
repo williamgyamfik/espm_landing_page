@@ -13,9 +13,7 @@ const OurServices = () => {
         <div className="">
           <FontAwesomeIcon icon={faUser} className="fa-3x" width="100" />
         </div>
-        <h1 className="text-xl sm:text-3xl text-center   font-bold">
-          Scouting
-        </h1>
+        <h1 className="text-xl sm:text-3xl text-center ">Scouting</h1>
         <p className="p-3 text-left">
           We develop a deep understanding of our clients’ vision, conduct
           context specific evaluation of the marketplace, and use our extensive
@@ -32,9 +30,7 @@ const OurServices = () => {
             width="100"
           />
         </div>
-        <h1 className="text-xl sm:text-3xl text-center font-bold ">
-          Marketing
-        </h1>
+        <h1 className="text-xl sm:text-3xl text-center  ">Marketing</h1>
         <p className="p-3 text-left">
           We explore the elaborate marketing needs and digital innovations
           impacting events, teams, players, and endorsements.
@@ -45,9 +41,7 @@ const OurServices = () => {
         <div className="">
           <FontAwesomeIcon icon={faUsers} className="fa-3x" width="100" />
         </div>
-        <h1 className="text-xl sm:text-3xl text-center  font-bold">
-          Collaboration
-        </h1>
+        <h1 className="text-xl sm:text-3xl text-center  ">Collaboration</h1>
 
         <p className="p-3 text-left">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, vitae.
@@ -62,7 +56,7 @@ const OurServices = () => {
             width="100"
           />
         </div>
-        <h1 className="text-xl sm:text-3xl text-center  font-bold">
+        <h1 className="text-xl sm:text-3xl text-center  ">
           Contract Negotiation
         </h1>
         <p className="p-3 text-left">
@@ -74,7 +68,7 @@ const OurServices = () => {
         <div className="">
           <FontAwesomeIcon icon={faPhone} className="fa-3x" width="100" />
         </div>
-        <h1 className="text-xl sm:text-3xl text-center  font-bold">Support</h1>
+        <h1 className="text-xl sm:text-3xl text-center  ">Support</h1>
         <p className="p-3 text-left">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, vitae.
         </p>
