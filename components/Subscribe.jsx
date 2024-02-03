@@ -12,6 +12,9 @@ const Subscribe = () => {
   return (
     <div className="flex flex-col my-16 p-5">
       <div className="text-center p-5">
+        <h1 className="uppercase text-xl font-bold text-blue-900">
+          Sign up for emails
+        </h1>
         <p className=" text-blue-900">
           Subscribe to our emailing list and receive the latest updates from us
         </p>
