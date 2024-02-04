@@ -15,7 +15,7 @@ import Spinner from "@/components/Spinner";
 export default function Home() {
   return (
     <div>
-      <section className="min-h-0" id="home">
+      <section className="min-h-0 text-slide" id="home">
         <div className=" w-full flex sm:flex-row items-center justify-center flex-wrap  p-5 leading-loose">
           <div className="p-5 lg:w-72 w-full">
             <div className=" ">

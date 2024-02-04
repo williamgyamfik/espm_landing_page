@@ -23,11 +23,7 @@ padding: 0;
 
   }
 
-/* @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */
+
 
 
 .progress-bar{
@@ -43,3 +39,21 @@ padding: 0;
 .overflow-no-scroll-bar::-webkit-scrollbar { 
   display: none; 
 } 
+
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+   
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+   
+  }
+}
+
+.text-slide {
+  animation: slideInFromLeft 5s ease-out;
+}
+
