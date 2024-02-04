@@ -2,8 +2,8 @@ import React from "react";
 
 const Spinner = () => {
   return (
-    <div className="">
-      <span className="loading loading-dots loading-lg">loading</span>
+    <div className="z-20">
+      <span className="loading loading-spinner loading-lg"></span>{" "}
     </div>
   );
 };

@@ -15,11 +15,11 @@ const TeamCard = ({ teamMembers, i }) => {
             highest heights in their career.
           </p>
         </div>
-        <div className="grid sm:grid-cols-1 grid-cols-1  p-5  ">
+        <div className="grid sm:grid-cols-1 grid-cols-1  p-5">
           {teamMembers?.map((teamMember) => {
             return (
               <div
-                className=" flex items-center justify-center "
+                className=" flex items-center justify-center"
                 key={teamMember.id}
               >
                 <Image
@@ -37,7 +37,6 @@ const TeamCard = ({ teamMembers, i }) => {
               </div>
             );
           })}
-          ;
         </div>
       </div>
     </>

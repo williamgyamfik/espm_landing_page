@@ -4,46 +4,61 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileSignature } from "@fortawesome/free-solid-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { faPhoneVolume } from "@fortawesome/free-solid-svg-icons";
+import SignUpForm from "./SignUpForm";
 
 const GetStarted = () => {
   return (
-    <div className="mx-auto py-16">
-      <h1 className="text-3xl  text-center text-white p-3 font-bold">
-        Convinced yet? Get started in 3 easy steps...
-      </h1>
-      <div className="w-full mt-12 sm:mb-10 text-white flex  justify-around flex-col items-center sm:flex-row">
-        <div className="flex justify-center mb-10 sm:mb-0">
-          <p className="sm:text-1xl lg:text-2xl mt-1 p-1">
-            <span className="text-sm p-2 ">1.</span>Fill in your details
-          </p>
-          <FontAwesomeIcon
-            icon={faFileSignature}
-            width="30"
-            className="mx-2 "
-          />
+    <>
+      <dialog id="my_modal_1" className=" min-h-0 modal bg-transparent ">
+        <div className="  max-w-full m-10 p-5 overflow-no-scroll-bar">
+          <SignUpForm />
         </div>
+      </dialog>
+      <div className="mx-auto py-16">
+        <h1 className="text-3xl  text-center text-white p-3 font-bold">
+          Convinced yet? Get started in 3 easy steps...
+        </h1>
+        <div className="w-full mt-12 sm:mb-10 text-white flex  justify-around flex-col items-center sm:flex-row">
+          <div className="flex justify-center mb-10 sm:mb-0">
+            <p className="sm:text-1xl lg:text-2xl mt-1 p-1">
+              <span className="text-sm p-2 ">1.</span>Fill in your details
+            </p>
+            <FontAwesomeIcon
+              icon={faFileSignature}
+              width="30"
+              className="mx-2 "
+            />
+          </div>
 
-        <div className="flex justify-center mb-10 sm:mb-0">
-          <p className="sm:text-1xl lg:text-2xl mt-1">
-            <span className="text-sm p-2 ">2.</span>
-            Submit
-          </p>
-          <FontAwesomeIcon icon={faPaperPlane} width="30" className="mx-2 " />
+          <div className="flex justify-center mb-10 sm:mb-0">
+            <p className="sm:text-1xl lg:text-2xl mt-1">
+              <span className="text-sm p-2 ">2.</span>
+              Submit
+            </p>
+            <FontAwesomeIcon icon={faPaperPlane} width="30" className="mx-2 " />
+          </div>
+          <div className="flex justify-center  sm:mb-0">
+            <p className=" sm:text-1xl lg:text-2xl mt-1">
+              <span className="text-sm p-2 "> 3.</span> We get back to you
+              <span className="text-lime-500 font-bold "> ASAP</span>
+            </p>
+            <FontAwesomeIcon
+              icon={faPhoneVolume}
+              width="30"
+              className="mx-2 "
+            />
+          </div>
         </div>
-        <div className="flex justify-center  sm:mb-0">
-          <p className=" sm:text-1xl lg:text-2xl mt-1">
-            <span className="text-sm p-2 "> 3.</span> We get back to you
-            <span className="text-lime-500 font-bold "> ASAP</span>
-          </p>
-          <FontAwesomeIcon icon={faPhoneVolume} width="30" className="mx-2 " />
+        <div className="flex justify-center mt-10">
+          <button
+            className="btn w-64 mx-auto block rounded-none text-blue-900 hover:text-white bg-white hover:bg-blue-800"
+            onClick={() => document.getElementById("my_modal_1").showModal()}
+          >
+            Sign up here
+          </button>
         </div>
       </div>
-      <div className="flex justify-center mt-10">
-        <button className="btn w-64 mx-auto block rounded-none text-blue-900 hover:text-white bg-white hover:bg-blue-800">
-          Sign up
-        </button>
-      </div>
-    </div>
+    </>
   );
 };
 

@@ -8,9 +8,7 @@ import OurServices from "../components/OurServices";
 import Contact from "../components/Contact";
 import Team from "../components/Team";
 import GetStarted from "@/components/GetStarted";
-import bgImage2 from "../public/images/bgImage2.jpg";
 import Subscribe from "@/components/Subscribe";
-import Spinner from "@/components/Spinner";
 
 export default function Home() {
   return (
@@ -58,8 +56,6 @@ export default function Home() {
           {/* </div> */}
         </dialog>
       </section>
-
-      <Spinner />
 
       <section className="bg-blue-900 min-h-0 text-center" id="services">
         <h1 className="text-3xl p-5 text-white font-bold">Our Services</h1>

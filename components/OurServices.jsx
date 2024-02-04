@@ -61,8 +61,9 @@ const OurServices = () => {
             Contract Negotiation
           </h1>
           <p className="p-3 text-left leading-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
-            vitae.
+            We understand the needs of every athlete we work with and we have in
+            place a dedicated team ready to guide you through the contract
+            negotiation process
           </p>
         </div>
       </div>
@@ -74,8 +75,8 @@ const OurServices = () => {
         <div>
           <h1 className="text-xl sm:text-3xl text-center  ">Support</h1>
           <p className="p-3 text-left">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
-            vitae.
+            Our support team is ready to answer all your queries. Reach out to
+            us and lets talk.
           </p>
         </div>
       </div>

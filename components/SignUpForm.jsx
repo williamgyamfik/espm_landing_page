@@ -3,9 +3,13 @@ import React, { useState } from "react";
 import { Label } from "flowbite-react";
 import { supabase } from "../Utils/supabaseClient";
 import Spinner from "./Spinner";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 
 const SignUpForm = () => {
   const [showSpinner, setShowSpinner] = useState(false);
+  const [dob, setDob] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState();
 
   const [userInput, setUserInput] = useState({
     first_name: "",
@@ -15,6 +19,7 @@ const SignUpForm = () => {
     email: "",
     phone: "",
     video_link: "",
+    otherSportsType: "",
     sportsType: "",
   });
 
@@ -26,7 +31,18 @@ const SignUpForm = () => {
   const signUpHandler = async (e) => {
     e.preventDefault();
     setShowSpinner(true);
+
     try {
+      let age;
+      const currentDate = new Date();
+      const birthYear = new Date(userInput.age);
+
+      if (birthYear.getFullYear() > currentDate.getFullYear()) {
+        setDob(true);
+      } else {
+        age = currentDate.getFullYear() - birthYear.getFullYear();
+      }
+
       const { data, error } = await supabase
         .from("userProfile")
         .insert([
@@ -36,23 +52,39 @@ const SignUpForm = () => {
             email: userInput.last_name,
             video_link: userInput.video_link,
             gender: userInput.gender,
-            phone: userInput.phone,
+            phone: phoneNumber,
             age: userInput.age,
-            sports_type: userInput.sportsType,
+            Date_of_birth: userInput.Date_of_birth,
+            sports_type:
+              userInput.sportsType === "Other"
+                ? userInput.otherSportsType
+                : userInput.sportsType,
           },
         ])
         .select("*");
+      userInput.first_name = "";
+      userInput.last_name = "";
+      userInput.email = "";
+      userInput.age = "";
+      userInput.video_link = "";
+      userInput.gender = "";
+      setPhoneNumber((phoneNumber) => {
+        phoneNumber = "";
+      });
+      userInput.otherSportsType = "";
+      userInput.sportsType = "";
+      setDob(false);
     } catch (error) {}
     setShowSpinner(false);
   };
 
-  if (showSpinner) {
-    <Spinner />;
-  }
+  // if (!showSpinner) {
+  //   <Spinner />;
+  // }
   return (
     <div className=" flex flex-col flex-1 pt-4 sm:px-0  ">
       <div className="flex flex-1 flex-col p-2 text-sm   shadow-xl text-blue-900 bg-blue-900">
-        <p className="py-4 text-center text-2xl font-bold text-white">
+        <p className="py-4 text-center text-2xl font-bold ">
           ESPM talent Sign up form
         </p>
         <div className="flex align-center justify-center  ">
@@ -140,15 +172,19 @@ const SignUpForm = () => {
                 <div className="mb-2 block">
                   <Label htmlFor="Phone1" value="Phone" />
                 </div>
-                <input
-                  className="bg-white p-2"
-                  id="Phone1"
-                  type="tel"
-                  name="phone"
-                  onChange={userInputHandler}
-                  value={userInput?.phone}
-                  required
-                />
+                <div className="w-64">
+                  <PhoneInput
+                    international
+                    countryCallingCodeEditable={false}
+                    className="  p-2 w-64 PhoneInputCountry PhoneInputInput"
+                    id="Phone1"
+                    type="tel"
+                    name="phone"
+                    onChange={setPhoneNumber}
+                    value={phoneNumber}
+                    required
+                  />
+                </div>
               </div>
 
               <div className="flex flex-col flex-wrap ">
@@ -166,6 +202,20 @@ const SignUpForm = () => {
                   <option value="Boxing">Boxing</option>
                   <option value="Other">Other</option>
                 </select>
+
+                {userInput?.sportsType === "Other" ? (
+                  <div className="w-full px-3 -mx-3 mt-3 mb-6 md:mb-0">
+                    <input
+                      className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      type="text"
+                      placeholder="Please specify"
+                      onChange={userInputHandler}
+                      name="otherSportsType"
+                      value={userInput.other}
+                      required
+                    />
+                  </div>
+                ) : null}
               </div>
             </div>
             <div className="flex flex-col mt-5">
