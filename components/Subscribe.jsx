@@ -2,9 +2,20 @@ import React, { useState } from "react";
 
 const Subscribe = () => {
   const [input, setInput] = useState("");
+  const [showMessage, setShowMessage] = useState(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
+    setInput("");
+    setShowMessage(true);
+
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 6000);
+  };
+
+  const EmailInputHandler = (e) => {
+    setInput(e.target.value);
   };
 
   return (
@@ -13,7 +24,7 @@ const Subscribe = () => {
         <h1 className="uppercase text-xl font-bold text-blue-900">
           Sign up for emails
         </h1>
-        <p className=" text-blue-900">
+        <p className="p-2 text-blue-900">
           Subscribe to our emailing list and receive the latest updates from us
         </p>
       </div>
@@ -24,7 +35,10 @@ const Subscribe = () => {
             <input
               className="h-12 w-64 text-center text-blue-900 bg-white border border-blue-900 rounded-none"
               placeholder="Enter e-mail address here"
-              type="text"
+              type="email"
+              value={input}
+              onChange={EmailInputHandler}
+              required
             />
           </div>
           <div className="p-5">
@@ -34,6 +48,11 @@ const Subscribe = () => {
           </div>
         </div>
       </form>
+      {showMessage ? (
+        <p className="text-center text-blue-900 text-slide">
+          Thanks for subscribing.....
+        </p>
+      ) : null}
     </div>
   );
 };

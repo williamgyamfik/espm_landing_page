@@ -1,5 +1,4 @@
 "use client";
-// import Layout from "@/components/Layout";
 import hero from "../public/images/hero4nobg.png";
 import Image from "next/image";
 import SignUpForm from "../components/SignUpForm";
@@ -12,18 +11,14 @@ import Subscribe from "@/components/Subscribe";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <section className="min-h-0 text-slide" id="home">
         <div className=" w-full flex sm:flex-row items-center justify-center flex-wrap  p-5 leading-loose">
           <div className="p-5 lg:w-72 w-full">
-            <div className=" ">
-              <h1 className="uppercase  text-3xl text-blue-900 font-extrabold ">
-                we develop and manage sports talents
-              </h1>
-            </div>
-            <div className="">
-              <p className="text-black">We develop and manage talents</p>
-            </div>
+            <h1 className="uppercase  text-3xl text-blue-900 font-extrabold ">
+              we develop and manage sports talents
+            </h1>
+            <p className="text-black">We develop and manage talents</p>
             <div className="mb-5 w-full">
               <p
                 className="underline cursor-pointer hover:text-blue-900 uppercase"
@@ -41,14 +36,17 @@ export default function Home() {
           </div>
         </div>
 
-        <dialog id="my_modal_1" className=" min-h-0 modal bg-transparent ">
+        <dialog
+          id="my_modal_1"
+          className=" min-h-0 modal bg-transparent mt-7 overflow-scroll"
+        >
           {/* <div className="modal-box w-full max-w-full bg-black ">
             <p className="py-4 text-center text-2xl font-bold">
               ESPM Sign up form for talent managment
             </p> */}
           {/* <div className="modal-action"> */}
 
-          <div className="  max-w-full m-10 p-5 overflow-no-scroll-bar">
+          <div className="max-w-full p-5  ">
             <SignUpForm />
           </div>
 
@@ -68,6 +66,9 @@ export default function Home() {
       >
         <div className="absolute inset-0 bg-black opacity-25"></div>
         <div className="relative z-20">
+          <h1 className="text-blue-900 text-center font-bold text-3xl p-5">
+            About us
+          </h1>
           <AboutUs />
         </div>
       </section>
@@ -84,15 +85,14 @@ export default function Home() {
         <Subscribe />
       </section>
 
-      <section className=" bg-blue-900   " id="contact">
+      <section className=" bg-blue-900" id="contact">
         <div className="p-5">
           <h1 className="text-3xl text-white text-center font-bold">
             Contact{" "}
           </h1>
         </div>
-
         <Contact />
       </section>
-    </div>
+    </>
   );
 }

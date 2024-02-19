@@ -31,7 +31,7 @@ const Contact = () => {
               <div className="flex  flex-wrap mb-5 mx-5">
                 <div className="w-full">
                   <label className="font-bold uppercase text-xs" htmlFor="name">
-                    First name*{" "}
+                    First name<span className="text-red-500">*</span>
                   </label>
                   <input
                     className="mb-5 block w-full h-10  bg-white   focus:bg-white"
@@ -43,7 +43,7 @@ const Contact = () => {
 
                 <div className="w-full">
                   <label className="font-bold uppercase text-xs" htmlFor="name">
-                    Surname*{" "}
+                    Surname<span className="text-red-500">*</span>
                   </label>
                   <input
                     className="w-full block h-10  bg-white   focus:bg-white"
@@ -60,7 +60,7 @@ const Contact = () => {
                     className="font-bold uppercase text-xs "
                     htmlFor="name"
                   >
-                    Email*{" "}
+                    Email<span className="text-red-500">*</span>
                   </label>
                   <input
                     className="w-full h-10  bg-white   focus:bg-white block"
@@ -74,7 +74,7 @@ const Contact = () => {
               <div className="flex flex-wrap mb-5 mx-5 ">
                 <div className="w-full">
                   <label className="font-bold uppercase text-xs" htmlFor="name">
-                    Message*{" "}
+                    Message<span className="text-red-500">*</span>
                   </label>
                   <textarea
                     name="message"

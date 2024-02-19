@@ -78,13 +78,13 @@ const SignUpForm = () => {
     setShowSpinner(false);
   };
 
-  // if (!showSpinner) {
+  // if (showSpinner) {
   //   <Spinner />;
   // }
   return (
     <div className=" flex flex-col flex-1 pt-4 sm:px-0  ">
       <div className="flex flex-1 flex-col p-2 text-sm   shadow-xl text-blue-900 bg-blue-900">
-        <p className="py-4 text-center text-2xl font-bold ">
+        <p className="py-4 text-center text-2xl font-bold text-white">
           ESPM talent Sign up form
         </p>
         <div className="flex align-center justify-center  ">
@@ -159,7 +159,7 @@ const SignUpForm = () => {
                   value={userInput?.gender}
                   required
                 >
-                  <option defaultValue="select" disabled>
+                  <option defaultValue="select" disabled value="select">
                     Select....
                   </option>
                   <option value="Female">Female</option>
