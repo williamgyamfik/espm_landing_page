@@ -54,13 +54,13 @@ padding: 0;
 .progress-bar{
   height: 10px;
   width: 100%;
-  background: #1E3A8A;
+  background: #fb0202;
   position: fixed;
   top: 0;
   left: 0;
   transform-origin: 0 0 ;
 }
-
+/* #1E3A8A */
 .overflow-no-scroll-bar::-webkit-scrollbar { 
   display: none; 
 } 

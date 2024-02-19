@@ -6,6 +6,7 @@ import Link from "next/link";
 import hero from "../public/images/hero4nobg.png";
 import Image from "next/image";
 import { Navbar } from "flowbite-react";
+import companyLogo from "../public/images/companyLogoNoBkgrd.png";
 
 const Layout = ({ children }) => {
   const [navBar, setNavBar] = useState(false);
@@ -88,7 +89,12 @@ const Layout = ({ children }) => {
             </div>
             <Link href="/">
               <div className="flex-1 px-2 mx-2">
-                <h3 className="text-sm">Euphoria Sports Management</h3>
+                <div className="flex justify-center items-center ">
+                  <div className="m-3">
+                    <h3 className="text-sm">Euphoria Sports Management</h3>
+                  </div>
+                  <Image src={companyLogo} alt="company logo" width={100} />
+                </div>
               </div>
             </Link>
             <div className="flex-none hidden lg:block">
@@ -128,7 +134,7 @@ const Layout = ({ children }) => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu p-4 w-80 min-h-full bg-blue-900 text-white">
+          <ul className="menu p-4 w-80 min-h-full bg-white text-blue-900">
             {/* Sidebar content here */}
             <li>
               <a href="#home" className="scroll-link">

@@ -233,11 +233,11 @@ const SignUpForm = () => {
               />
             </div>
             <div className="flex flex-wrap gap-5 my-5 justify-center center-align">
-              <button className="btn w-64 mx-auto block rounded-none focus:outline-blue-900 text-blue-900 border-blue-900 hover:text-white bg-white hover:bg-blue-800">
+              <button className="btn w-full sm:w-64 mx-auto block rounded-none focus:outline-blue-900 text-white border-blue-900 hover:text-white bg-blue-600 hover:bg-green-500">
                 SAVE
               </button>
               <button
-                className="btn w-64 mx-auto block rounded-none focus:outline-blue-900 text-blue-900 border-blue-900 hover:text-white bg-white hover:bg-red-500"
+                className="btn w-full sm:w-64 mx-auto block rounded-none focus:outline-blue-900 text-blue-900 border-blue-900 hover:text-white bg-white  hover:bg-red-500"
                 onClick={() => document.getElementById("my_modal_1").close()}
               >
                 CLOSE
