@@ -88,7 +88,7 @@ const SignUpForm = () => {
           ESPM talent Sign up form
         </p>
         <div className="flex align-center justify-center  ">
-          <form className="mx-2 w-full" onSubmit={signUpHandler}>
+          <form className="mx-2  " onSubmit={signUpHandler}>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
               <div className="flex flex-col flex-wrap ">
                 <div className="mb-2 block">

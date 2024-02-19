@@ -38,7 +38,7 @@ export default function Home() {
 
         <dialog
           id="my_modal_1"
-          className=" min-h-0 modal bg-transparent mt-7 overflow-scroll"
+          className=" min-h-0 modal bg-transparent  overflow-scroll"
         >
           {/* <div className="modal-box w-full max-w-full bg-black ">
             <p className="py-4 text-center text-2xl font-bold">
@@ -46,7 +46,7 @@ export default function Home() {
             </p> */}
           {/* <div className="modal-action"> */}
 
-          <div className="max-w-full p-5  ">
+          <div className="w-full  m-5 p-5">
             <SignUpForm />
           </div>
 
