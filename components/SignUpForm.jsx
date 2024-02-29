@@ -5,16 +5,17 @@ import { supabase } from "../Utils/supabaseClient";
 import Spinner from "./Spinner";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+import countries from "@/Utils/countries";
 
 const SignUpForm = () => {
-  const [showSpinner, setShowSpinner] = useState(false);
+  const [showSpinner, setShowSpinner] = useState();
   const [dob, setDob] = useState(false);
-  const [phoneNumber, setPhoneNumber] = useState();
-
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [userInput, setUserInput] = useState({
     first_name: "",
     last_name: "",
     Date_of_birth: "",
+    age: "",
     gender: "",
     email: "",
     phone: "",
@@ -25,6 +26,20 @@ const SignUpForm = () => {
 
   const userInputHandler = (e) => {
     const { name, value } = e.target;
+
+    let age;
+    const currentDate = new Date();
+    const birthYear = new Date(userInput.Date_of_birth);
+
+    if (
+      birthYear.getFullYear() >= currentDate.getFullYear() ||
+      birthYear.getFullYear() + 17 > currentDate.getFullYear()
+    ) {
+      setDob(true);
+      return;
+    } else {
+      age = currentDate.getFullYear() - birthYear.getFullYear();
+    }
     setUserInput({ ...userInput, [name]: value });
   };
 
@@ -33,16 +48,6 @@ const SignUpForm = () => {
     setShowSpinner(true);
 
     try {
-      let age;
-      const currentDate = new Date();
-      const birthYear = new Date(userInput.age);
-
-      if (birthYear.getFullYear() > currentDate.getFullYear()) {
-        setDob(true);
-      } else {
-        age = currentDate.getFullYear() - birthYear.getFullYear();
-      }
-
       const { data, error } = await supabase
         .from("userProfile")
         .insert([
@@ -53,7 +58,7 @@ const SignUpForm = () => {
             video_link: userInput.video_link,
             gender: userInput.gender,
             phone: phoneNumber,
-            age: userInput.age,
+            age: +userInput.age,
             Date_of_birth: userInput.Date_of_birth,
             sports_type:
               userInput.sportsType === "Other"
@@ -62,19 +67,20 @@ const SignUpForm = () => {
           },
         ])
         .select("*");
-      userInput.first_name = "";
-      userInput.last_name = "";
-      userInput.email = "";
-      userInput.age = "";
-      userInput.video_link = "";
-      userInput.gender = "";
-      setPhoneNumber((phoneNumber) => {
-        phoneNumber = "";
-      });
-      userInput.otherSportsType = "";
-      userInput.sportsType = "";
-      setDob(false);
+      // userInput.first_name = "";
+      // userInput.last_name = "";
+      // userInput.email = "";
+      // userInput.age = "";
+      // userInput.video_link = "";
+      // userInput.gender = "";
+      // setPhoneNumber((phoneNumber) => {
+      //   phoneNumber = "";
+      // });
+      // userInput.Date_of_birth = "";
+      // userInput.otherSportsType = "";
+      // userInput.sportsType = "";
     } catch (error) {}
+    setDob(false);
     setShowSpinner(false);
   };
 
@@ -88,14 +94,14 @@ const SignUpForm = () => {
           ESPM talent Sign up form
         </p>
         <div className="flex align-center justify-center  ">
-          <form className="mx-2  " onSubmit={signUpHandler}>
+          <form className="mx-2  max-w-full" onSubmit={signUpHandler}>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
               <div className="flex flex-col flex-wrap ">
                 <div className="mb-2 block">
                   <Label className="" htmlFor="firstName1" value="First Name" />
                 </div>
                 <input
-                  className="bg-white p-2"
+                  className="bg-blue-300 p-2"
                   id="firstName1"
                   type="text"
                   name="first_name"
@@ -109,7 +115,7 @@ const SignUpForm = () => {
                   <Label htmlFor="lastName1" value="Surname" />
                 </div>
                 <input
-                  className="bg-white p-2"
+                  className="bg-blue-300 p-2"
                   id="lastName1"
                   type="text"
                   name="last_name"
@@ -123,7 +129,7 @@ const SignUpForm = () => {
                   <Label htmlFor="email1" value="Email" />
                 </div>
                 <input
-                  className="bg-white p-2"
+                  className="bg-blue-300 p-2"
                   id="email1"
                   type="email"
                   name="email"
@@ -138,7 +144,7 @@ const SignUpForm = () => {
                   <Label htmlFor="dob1" value="Date of Birth" />
                 </div>
                 <input
-                  className=" p-2 bg-white "
+                  className=" p-2 bg-blue-300 "
                   id="dob1"
                   type="date"
                   name="Date_of_birth"
@@ -146,6 +152,11 @@ const SignUpForm = () => {
                   value={userInput?.Date_of_birth}
                   required
                 />
+                {/* {dob ? (
+                  <p className="text-red-500">Invalid date of birth</p>
+                ) : (
+                  ""
+                )} */}
               </div>
               <div className="flex flex-col flex-wrap ">
                 <div className="mb-2 block">
@@ -153,15 +164,16 @@ const SignUpForm = () => {
                 </div>
                 <select
                   id="gender1"
-                  className="bg-white p-2"
+                  className="bg-blue-300 p-2"
                   name="gender"
                   onChange={userInputHandler}
                   value={userInput?.gender}
                   required
                 >
-                  <option defaultValue="select" disabled value="select">
+                  <option defaultValue value="select">
                     Select....
                   </option>
+
                   <option value="Female">Female</option>
                   <option value="Male">Male</option>
                   <option value="Prefer not to say">Prefer not to say</option>
@@ -172,11 +184,13 @@ const SignUpForm = () => {
                 <div className="mb-2 block">
                   <Label htmlFor="Phone1" value="Phone" />
                 </div>
-                <div className="w-64">
+                <div className="w-64 ">
                   <PhoneInput
-                    international
-                    countryCallingCodeEditable={false}
-                    className="  p-2 w-64 PhoneInputCountry PhoneInputInput"
+                    // labels={countries}
+                    international={true}
+                    // countryCallingCodeEditable={false}
+                    withCountryCallingCode
+                    className="p-2 w-64 PhoneInputInput  PhoneInputCountry bg-blue-300 text-blue-900"
                     id="Phone1"
                     type="tel"
                     name="phone"
@@ -192,12 +206,15 @@ const SignUpForm = () => {
                   <Label htmlFor="sports_type1" value="Sports type" />
                 </div>
                 <select
-                  id="sportsType"
-                  className="bg-white p-2"
+                  id="sports_type1"
+                  className="bg-blue-300 p-2"
                   name="sportsType"
                   onChange={userInputHandler}
                   value={userInput?.sportsType}
                 >
+                  <option defaultValue value="select">
+                    Select....
+                  </option>
                   <option value="Soccer">Soccer</option>
                   <option value="Boxing">Boxing</option>
                   <option value="Other">Other</option>
@@ -223,7 +240,7 @@ const SignUpForm = () => {
                 <Label htmlFor="video_link1" value="Video link" />
               </div>
               <input
-                className="bg-white p-2"
+                className="bg-blue-300 p-2"
                 id="video_link1"
                 type="text"
                 name="video_link"
@@ -234,9 +251,10 @@ const SignUpForm = () => {
             </div>
             <div className="flex flex-wrap gap-5 my-5 justify-center center-align">
               <button className="btn w-full sm:w-64 mx-auto block rounded-none focus:outline-blue-900 text-white border-blue-900 hover:text-white bg-blue-600 hover:bg-green-500">
-                SAVE
+                SUBMIT
               </button>
               <button
+                type="button"
                 className="btn w-full sm:w-64 mx-auto block rounded-none focus:outline-blue-900 text-blue-900 border-blue-900 hover:text-white bg-white  hover:bg-red-500"
                 onClick={() => document.getElementById("my_modal_1").close()}
               >

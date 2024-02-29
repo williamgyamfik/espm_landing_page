@@ -4,8 +4,8 @@ import Image from "next/image";
 const TeamCard = ({ teamMembers, i }) => {
   return (
     <>
-      <div className="min-h-0 m-5 flex justify-center flex-wrap items-center  p-5 text-black">
-        <div className=" p-2 w-64 ">
+      <div className="min-h-0  flex justify-center flex-wrap items-center  text-black">
+        <div className=" p-10 w-full sm:w-64 m-4 sm:p-2">
           <h1 className="text-3xl   text-blue-900 leading-10 font-bold">
             Meet our team
           </h1>

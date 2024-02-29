@@ -23,18 +23,19 @@
 	--PhoneInputCountryFlag-borderWidth: 1px;
 	--PhoneInputCountryFlag-borderColor: rgba(0,0,0,0.5);
 	--PhoneInputCountryFlag-borderColor--focus: var(--PhoneInput-color--focus);
-	--PhoneInputCountryFlag-backgroundColor--loading: rgba(0,0,0,0.1);
+	--PhoneInputCountryFlag-backgroundColor--loading:white;
 
 
 }
 
 .PhoneInputInput {
-  background-color: white;
+  background-color: #90cdf4;
+  color: #1a365d;
 }
 
 .PhoneInputCountry{
   color: var(--PhoneInput-color--focus);
-}
+} 
 
 
 
@@ -52,7 +53,7 @@ padding: 0;
   }
 
 .progress-bar{
-  height: 10px;
+  height: 3px;
   width: 100%;
   background: #fb0202;
   position: fixed;

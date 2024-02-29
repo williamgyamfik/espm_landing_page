@@ -18,7 +18,10 @@ export default function Home() {
             <h1 className="uppercase  text-3xl text-blue-900 font-extrabold ">
               we develop and manage sports talents
             </h1>
-            <p className="text-black">We develop and manage talents</p>
+            <p className="text-black">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Cupiditate, suscipit.
+            </p>
             <div className="mb-5 w-full">
               <p
                 className="underline cursor-pointer hover:text-blue-900 uppercase"
@@ -46,7 +49,7 @@ export default function Home() {
             </p> */}
           {/* <div className="modal-action"> */}
 
-          <div className="w-full  m-5 p-5">
+          <div className=" mt-7 p-5">
             <SignUpForm />
           </div>
 
@@ -61,7 +64,7 @@ export default function Home() {
       </section>
 
       <section
-        className="relative flex items-center justify-center -z-10 h-min-0 bg-parallax bg-fixed bg-cover overflow-no-scroll-bar opacity-100 "
+        className="relative px-10 sm:px-28  flex items-center justify-center -z-10 h-min-0 bg-parallax bg-fixed bg-cover  opacity-100 "
         id="about"
       >
         <div className="absolute inset-0 bg-black opacity-25"></div>
