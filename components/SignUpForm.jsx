@@ -67,18 +67,18 @@ const SignUpForm = () => {
           },
         ])
         .select("*");
-      // userInput.first_name = "";
-      // userInput.last_name = "";
-      // userInput.email = "";
-      // userInput.age = "";
-      // userInput.video_link = "";
-      // userInput.gender = "";
-      // setPhoneNumber((phoneNumber) => {
-      //   phoneNumber = "";
-      // });
-      // userInput.Date_of_birth = "";
-      // userInput.otherSportsType = "";
-      // userInput.sportsType = "";
+      userInput.first_name = "";
+      userInput.last_name = "";
+      userInput.email = "";
+      userInput.age = "";
+      userInput.video_link = "";
+      userInput.gender = "";
+      setPhoneNumber((phoneNumber) => {
+        phoneNumber = "";
+      });
+      userInput.Date_of_birth = "";
+      userInput.otherSportsType = "";
+      userInput.sportsType = "";
     } catch (error) {}
     setDob(false);
     setShowSpinner(false);

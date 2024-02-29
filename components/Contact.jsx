@@ -89,7 +89,10 @@ const Contact = () => {
               </div>
               <div className="flex flex-wrap">
                 <div className="w-full ">
-                  <button className="btn w-6/12 mx-auto block rounded-none text-blue-900 hover:text-white bg-white hover:bg-blue-800">
+                  <button
+                    className="btn w-6/12 mx-auto block rounded-none text-blue-900 hover:text-white bg-white hover:bg-blue-800"
+                    type="submit"
+                  >
                     Send
                   </button>
                 </div>
