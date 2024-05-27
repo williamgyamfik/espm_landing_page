@@ -18,10 +18,7 @@ export default function Home() {
             <h1 className="uppercase  text-3xl text-blue-900 font-extrabold ">
               we develop and manage sports talents
             </h1>
-            <p className="text-black">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Cupiditate, suscipit.
-            </p>
+
             <div className="mb-5 w-full">
               <p
                 className="underline cursor-pointer hover:text-blue-900 uppercase"
