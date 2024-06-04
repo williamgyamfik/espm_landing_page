@@ -6,6 +6,7 @@ const roboto = Roboto({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
   title: "Espm",
+  description: "euphoriasportsmgt, talent,management,soccer",
 };
 
 export default function RootLayout({ children }) {

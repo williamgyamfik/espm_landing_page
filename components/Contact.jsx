@@ -1,6 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
+import { supabase } from "../Utils/supabaseClient";
 
 const Contact = () => {
+  const [userInquiry, setUserInquiry] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    message: "",
+  });
+
+  const inputhandler = (e) => {
+    const { name, value } = e.target;
+    setUserInquiry({ ...userInquiry, [name]: value });
+  };
+
+  const formDetailsHandler = async (e) => {
+    e.preventDefault();
+
+    try {
+      const data = await supabase
+        .from("ClientInquiry")
+        .insert([
+          {
+            first_name: userInquiry.first_name,
+            last_name: userInquiry.last_name,
+            email: userInquiry.email,
+            message: userInquiry.message,
+          },
+        ])
+        .select();
+
+      userInquiry.first_name = "";
+      userInquiry.last_name = "";
+      userInquiry.email = "";
+      userInquiry.message = "";
+    } catch (error) {}
+  };
+
   return (
     <div className=" px-2 sm:px-5 w-full p-10 text-white">
       <div className="flex justify-center ">
@@ -27,28 +63,40 @@ const Contact = () => {
             </div>
           </div>
           <div className="mb-16 ">
-            <form action="w-full max-w-7xl ">
+            <form action="w-full max-w-7xl " onSubmit={formDetailsHandler}>
               <div className="flex  flex-wrap mb-5 mx-5">
                 <div className="w-full">
-                  <label className="font-bold uppercase text-xs" htmlFor="name">
+                  <label
+                    className="font-bold uppercase text-xs"
+                    htmlFor="first_name1"
+                  >
                     First name<span className="text-red-500">*</span>
                   </label>
                   <input
-                    className="mb-5 block w-full h-10  bg-white   focus:bg-white"
+                    className="mb-5 block w-full h-10 p-2 bg-white  text-black focus:bg-blue-400"
+                    id="first_name1"
                     type="text"
                     name="first_name"
+                    value={userInquiry?.first_name}
+                    onChange={inputhandler}
                     required
                   />
                 </div>
 
                 <div className="w-full">
-                  <label className="font-bold uppercase text-xs" htmlFor="name">
+                  <label
+                    className="font-bold uppercase text-xs"
+                    htmlFor="surname_name1"
+                  >
                     Surname<span className="text-red-500">*</span>
                   </label>
                   <input
-                    className="w-full block h-10  bg-white   focus:bg-white"
+                    className="w-full block h-10 p-2 bg-white  text-black  focus:bg-blue-400"
+                    id="surname_name1"
                     type="text"
                     name="last_name"
+                    value={userInquiry?.last_name}
+                    onChange={inputhandler}
                     required
                   />
                 </div>
@@ -58,14 +106,17 @@ const Contact = () => {
                 <div className=" w-full">
                   <label
                     className="font-bold uppercase text-xs "
-                    htmlFor="name"
+                    htmlFor="email1"
                   >
                     Email<span className="text-red-500">*</span>
                   </label>
                   <input
-                    className="w-full h-10  bg-white   focus:bg-white block"
+                    className="w-full h-10 p-2 bg-white  text-black  focus:bg-blue-400 block"
+                    id="email1"
                     type="email"
                     name="email"
+                    value={userInquiry?.email}
+                    onChange={inputhandler}
                     required
                   />
                 </div>
@@ -73,16 +124,21 @@ const Contact = () => {
 
               <div className="flex flex-wrap mb-5 mx-5 ">
                 <div className="w-full">
-                  <label className="font-bold uppercase text-xs" htmlFor="name">
+                  <label
+                    className="font-bold uppercase text-xs"
+                    htmlFor="message1"
+                  >
                     Message<span className="text-red-500">*</span>
                   </label>
                   <textarea
                     name="message"
-                    id=""
+                    id="message1"
                     cols="50"
                     rows="5"
                     placeholder="send us a message"
-                    className="w-full block  bg-white h-25  focus:bg-white"
+                    className="w-full block p-2 bg-white h-25  text-black focus:bg-blue-400"
+                    value={userInquiry?.message}
+                    onChange={inputhandler}
                     required
                   ></textarea>
                 </div>

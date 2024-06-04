@@ -28,9 +28,9 @@ const TeamCard = ({ teamMembers, i }) => {
                   alt="team images"
                   width="250"
                 />
-                <div className="p-3 ">
+                <div className="p-3 text-left">
                   <p className="uppercase ">{teamMember.name}</p>
-                  <p className="uppercase text-center text-blue-900 font-bold">
+                  <p className="uppercase  text-blue-900 font-bold">
                     {teamMember.position}
                   </p>
                 </div>
