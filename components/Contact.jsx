@@ -58,7 +58,8 @@ const Contact = () => {
         </div> */}
             <div className="px-5 mb-5">
               <p>
-                <span className="font-bold">Email:</span> euphoriaspm@gmail.com
+                <span className="font-bold">Email : </span>
+                admin@euphoriasportsmgt.com
               </p>
             </div>
           </div>

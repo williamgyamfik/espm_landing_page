@@ -8,11 +8,12 @@ import Contact from "../components/Contact";
 import Team from "../components/Team";
 import GetStarted from "@/components/GetStarted";
 import Subscribe from "@/components/Subscribe";
+import Media from "@/components/Media";
 
 export default function Home() {
   return (
     <>
-      <section className="min-h-0 text-slide" id="home">
+      <section className=" text-slide" id="home">
         <div className=" w-full flex sm:flex-row items-center justify-center flex-wrap  p-5 leading-loose">
           <div className="p-5 lg:w-72 w-full">
             <h1 className="uppercase  text-3xl text-blue-900 font-extrabold ">
@@ -40,40 +41,41 @@ export default function Home() {
           id="my_modal_1"
           className=" min-h-0 modal bg-transparent  overflow-scroll"
         >
-          {/* <div className="modal-box w-full max-w-full bg-black ">
-            <p className="py-4 text-center text-2xl font-bold">
-              ESPM Sign up form for talent managment
-            </p> */}
-          {/* <div className="modal-action"> */}
-
           <div className=" mt-7 p-5">
             <SignUpForm />
           </div>
-
-          {/* </div> */}
-          {/* </div> */}
         </dialog>
       </section>
 
-      <section className="bg-blue-900 min-h-0 text-center" id="services">
-        <h1 className="text-3xl p-5 text-white font-bold">Our Services</h1>
+      <section className=" w-full  " id="services">
+        {/* <h1 className="text-4xl p-5 text-white font-bold">Our Services</h1> */}
         <OurServices />
       </section>
 
-      <section
-        className="relative px-10 sm:px-28  flex items-center justify-center -z-10 h-min-0 bg-parallax bg-fixed bg-cover  opacity-100 "
+      {/* <section
+        className="relative px-10 sm:px-28  flex items-center justify-center -z-10  bg-parallax bg-fixed bg-cover  opacity-100 "
         id="about"
       >
         <div className="absolute inset-0 bg-black opacity-25"></div>
-        <div className="relative z-20">
+        <div className="relative z-20 container mx-auto">
           <h1 className="text-blue-900 text-center font-bold text-3xl p-5">
             About us
           </h1>
           <AboutUs />
         </div>
+      </section> */}
+
+      <section className=" w-full  " id="about">
+        <div className="relative  flex items-center justify-center -z-10  bg-parallax bg-fixed bg-cover  opacity-100">
+          <AboutUs />
+        </div>
       </section>
 
-      <section className="min-h-0 bg-white ">
+      {/* <section>
+        <Media />
+      </section> */}
+
+      <section className=" bg-white ">
         <Team />
       </section>
 

@@ -2,13 +2,16 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="mt-16  text-white">
-      <div className=" p-3 mx-auto">
-        <h1 className="text-3xl text-center sm:text-left text-blue-900 font-bold">
-          Our story
+    <div className="px-5 md:px-10 lg:px-64 container mx-auto ">
+      <div className=" p-3 ">
+        <h1 className="text-4xl text-center mb-10 font-bold text-blue-900">
+          About us
         </h1>
+        <h2 className="text-3xl  text-left text-blue-900 font-bold mb-3">
+          Our story
+        </h2>
 
-        <p>
+        <p className="leading-10 text-white">
           Our story began in 2018 when the founders had a{" "}
           <span className="font-bold  leading-10">vision</span> to develop and
           represent talents in{" "}
@@ -24,10 +27,10 @@ const AboutUs = () => {
       </div>
 
       <div className="mt-16 p-3   ">
-        <h1 className="text-3xl text-center sm:text-left text-blue-900 leading-10 font-bold">
+        <h2 className="text-3xl  text-left text-blue-900 leading-10 font-bold mb-3">
           What we believe in
-        </h1>
-        <p className="leading-10">
+        </h2>
+        <p className="leading-10 text-white">
           We believe in professionalism and excellence. Our goal is to provide
           our clients with the highest standards of representation and
           management while maintaining our commitment to ethical and sustainable
@@ -37,10 +40,10 @@ const AboutUs = () => {
       </div>
 
       <div className="mt-16 p-3  ">
-        <h1 className="text-3xl text-center sm:text-left text-blue-900 leading-10 font-bold">
+        <h2 className="text-3xl  text-left text-blue-900 leading-10 font-bold mb-3">
           Our mission
-        </h1>
-        <p className="leading-10">
+        </h2>
+        <p className="leading-10 text-white">
           Euphoria Sports Management (ESPM) is a sports management, marketing
           and consulting business. We have expertise in representing athletes
           across a variety of sports, as well as advising governing bodies and
@@ -50,17 +53,6 @@ const AboutUs = () => {
           as a whole.
         </p>
       </div>
-
-      {/* <div className="mt-16 p-3  mx-auto">
-        <h1 className="text-3xl text-left text-blue-900 leading-10 font-bold">
-          Meet our team
-        </h1>
-        <p className="leading-10">
-          We are a team of passionate individuals dedicated to representing
-          sports professionals and organisations and helping them reach the
-          highest heights in their career.
-        </p>
-      </div> */}
     </div>
   );
 };
