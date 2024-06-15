@@ -38,11 +38,15 @@ const Contact = () => {
   };
 
   return (
-    <div className=" px-2 sm:px-5 w-full p-10 text-white">
+    <div className=" px-2 sm:px-5 w-full p-10 text-blue-900 ">
+      <div className="mb-20">
+        <h1 className="text-4xl font-bold text-center">Contact form</h1>
+      </div>
+
       <div className="flex justify-center ">
         <section className="flex flex-col md:flex-row justify-center mx-auto p-5">
-          <div>
-            <div className="px-5 mb-5">
+          <div className="mx-5">
+            <div className="px-5 mb-5 ">
               <h1 className="text-2xl  font-bold">You got questions?</h1>
             </div>
             <div className="px-5 mb-5">
@@ -51,11 +55,7 @@ const Contact = () => {
                 possible
               </p>
             </div>
-            {/* <div className="px-5 mb-5">
-          <p>
-            <span className="font-bold">Phone:</span> +1(347)702-0814{" "}
-          </p>
-        </div> */}
+
             <div className="px-5 mb-5">
               <p>
                 <span className="font-bold">Email : </span>
@@ -63,7 +63,7 @@ const Contact = () => {
               </p>
             </div>
           </div>
-          <div className="mb-16 ">
+          <div className="mb-16 shadow-xl p-10">
             <form action="w-full max-w-7xl " onSubmit={formDetailsHandler}>
               <div className="flex  flex-wrap mb-5 mx-5">
                 <div className="w-full">
@@ -74,7 +74,7 @@ const Contact = () => {
                     First name<span className="text-red-500">*</span>
                   </label>
                   <input
-                    className="mb-5 block w-full h-10 p-2 bg-white  text-black focus:bg-blue-400"
+                    className="mb-5 block w-full h-10 p-2 bg-gray-300  text-blue-900 focus:bg-gray-100"
                     id="first_name1"
                     type="text"
                     name="first_name"
@@ -92,7 +92,7 @@ const Contact = () => {
                     Surname<span className="text-red-500">*</span>
                   </label>
                   <input
-                    className="w-full block h-10 p-2 bg-white  text-black  focus:bg-blue-400"
+                    className="w-full block h-10 p-2 bg-gray-300  text-blue-900 focus:bg-gray-100"
                     id="surname_name1"
                     type="text"
                     name="last_name"
@@ -112,7 +112,7 @@ const Contact = () => {
                     Email<span className="text-red-500">*</span>
                   </label>
                   <input
-                    className="w-full h-10 p-2 bg-white  text-black  focus:bg-blue-400 block"
+                    className="w-full h-10 p-2 bg-gray-300  text-blue-900 focus:bg-gray-100"
                     id="email1"
                     type="email"
                     name="email"
@@ -137,7 +137,7 @@ const Contact = () => {
                     cols="50"
                     rows="5"
                     placeholder="send us a message"
-                    className="w-full block p-2 bg-white h-25  text-black focus:bg-blue-400"
+                    className="w-full block p-2 bg-gray-300 h-25  text-blue-900 focus:bg-gray-100"
                     value={userInquiry?.message}
                     onChange={inputhandler}
                     required

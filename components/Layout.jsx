@@ -26,31 +26,31 @@ const Layout = ({ children }) => {
     }
   }, []);
 
-  useEffect(() => {
-    const scrollLinks = document.querySelectorAll(".scroll-link");
-    scrollLinks.forEach((link) => {
-      link.addEventListener("click", function (e) {
-        e.preventDefault();
-        const id = e.currentTarget.getAttribute("href").slice(1);
+  // useEffect(() => {
+  //   const scrollLinks = document.querySelectorAll(".scroll-link");
+  //   scrollLinks.forEach((link) => {
+  //     link.addEventListener("click", function (e) {
+  //       e.preventDefault();
+  //       const id = e.currentTarget.getAttribute("href").slice(1);
 
-        const sectionElementId = document.getElementById(id);
-        const nav = document.getElementById("nav");
+  //       const sectionElementId = document.getElementById(id);
+  //       const nav = document.getElementById("nav");
 
-        const navHeight = nav.getBoundingClientRect().height;
+  //       const navHeight = nav.getBoundingClientRect().height;
 
-        let position = sectionElementId.offsetTop - navHeight;
+  //       let position = sectionElementId.offsetTop - navHeight;
 
-        if (!navBar) {
-          position = position - navHeight;
-        }
+  //       if (!navBar) {
+  //         position = position - navHeight;
+  //       }
 
-        window.scrollTo({
-          left: 0,
-          top: position,
-        });
-      });
-    });
-  }, []);
+  //       window.scrollTo({
+  //         left: 0,
+  //         top: position,
+  //       });
+  //     });
+  //   });
+  // }, []);
 
   return (
     <>
@@ -101,27 +101,29 @@ const Layout = ({ children }) => {
               <ul className="menu menu-horizontal ">
                 {/* Navbar menu content here */}
                 <li>
-                  <a href="#home" className="scroll-link">
+                  <a href="/" className="scroll-link">
                     Home
                   </a>
                 </li>
 
-                <li>
+                {/* <li>
                   <a href="#services" className="scroll-link">
                     Our services
                   </a>
-                </li>
+                </li> */}
 
                 <li>
+                  <a href="/blog">Blog</a>
+                </li>
+
+                {/* <li>
                   <a href="#about" className="scroll-link">
                     About us
                   </a>
-                </li>
+                </li> */}
 
                 <li>
-                  <a href="#contact" className="scroll-link">
-                    Contact
-                  </a>
+                  <a href="/contact">Contact</a>
                 </li>
               </ul>
             </div>
@@ -137,25 +139,28 @@ const Layout = ({ children }) => {
           <ul className="menu p-4 w-80 min-h-full bg-white text-blue-900">
             {/* Sidebar content here */}
             <li>
-              <a href="#home" className="scroll-link">
+              <a href="/" className="scroll-link">
                 Home
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="#services" className="scroll-link">
-                Services
+                Our Services
               </a>
-            </li>
+            </li> */}
+
             <li>
+              <a href="/blog">Blog</a>
+            </li>
+
+            {/* <li>
               <a href="#about" className="scroll-link">
                 About us
               </a>
-            </li>
+            </li> */}
 
             <li>
-              <a href="#contact" className="scroll-link">
-                Contact
-              </a>
+              <a href="/contact">Contact</a>
             </li>
           </ul>
         </div>

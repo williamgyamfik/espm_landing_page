@@ -4,11 +4,10 @@ import Image from "next/image";
 import SignUpForm from "../components/SignUpForm";
 import AboutUs from "../components/AboutUs";
 import OurServices from "../components/OurServices";
-import Contact from "../components/Contact";
+// import Contact from "../components/Contact";
 import Team from "../components/Team";
 import GetStarted from "@/components/GetStarted";
 import Subscribe from "@/components/Subscribe";
-import Media from "@/components/Media";
 
 export default function Home() {
   return (
@@ -48,32 +47,14 @@ export default function Home() {
       </section>
 
       <section className=" w-full  " id="services">
-        {/* <h1 className="text-4xl p-5 text-white font-bold">Our Services</h1> */}
         <OurServices />
       </section>
-
-      {/* <section
-        className="relative px-10 sm:px-28  flex items-center justify-center -z-10  bg-parallax bg-fixed bg-cover  opacity-100 "
-        id="about"
-      >
-        <div className="absolute inset-0 bg-black opacity-25"></div>
-        <div className="relative z-20 container mx-auto">
-          <h1 className="text-blue-900 text-center font-bold text-3xl p-5">
-            About us
-          </h1>
-          <AboutUs />
-        </div>
-      </section> */}
 
       <section className=" w-full  " id="about">
         <div className="relative  flex items-center justify-center -z-10  bg-parallax bg-fixed bg-cover  opacity-100">
           <AboutUs />
         </div>
       </section>
-
-      {/* <section>
-        <Media />
-      </section> */}
 
       <section className=" bg-white ">
         <Team />
@@ -87,14 +68,14 @@ export default function Home() {
         <Subscribe />
       </section>
 
-      <section className=" bg-blue-900" id="contact">
+      {/* <section className=" bg-blue-900" id="contact">
         <div className="p-5">
           <h1 className="text-3xl text-white text-center font-bold">
             Contact{" "}
           </h1>
         </div>
         <Contact />
-      </section>
+      </section> */}
     </>
   );
 }

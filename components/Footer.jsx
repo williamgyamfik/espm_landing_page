@@ -6,14 +6,14 @@ const Footer = () => {
   const year = date.getFullYear();
 
   return (
-    <footer className="footer footer-center p-10 r text-blue-900 rounded  ">
+    <footer className="footer footer-center p-10  text-white rounded bg-black ">
       <nav className="grid grid-flow-col gap-4">
         <a className="scroll-link" href="#about">
           About us
         </a>
-        <a className="scroll-link" href="#contact">
+        {/* <a className="scroll-link" href="#contact">
           Contact
-        </a>
+        </a> */}
         <a className="scroll-link" href="#services">
           Our services
         </a>
