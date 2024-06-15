@@ -10,7 +10,7 @@ const Blog = () => {
       <h1 className="font-bold text-4xl">Player profile</h1>
       <div className="border-b-2 border-b-blue-900"></div>
 
-      <h2 className="mt-5">
+      <h2 className="mt-5 text-2xl">
         Spotlight on
         <span className="text-bold text-black"> our top talent </span>
       </h2>
