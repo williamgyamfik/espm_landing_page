@@ -6,7 +6,7 @@ import Link from "next/link";
 import hero from "../public/images/hero4nobg.png";
 import Image from "next/image";
 import { Navbar } from "flowbite-react";
-import companyLogo from "../public/images/companyLogoNoBkgrd.png";
+import companyLogo from "../public/images/company_logo/esm_logo_removebg.png";
 
 const Layout = ({ children }) => {
   const [navBar, setNavBar] = useState(false);
@@ -62,7 +62,9 @@ const Layout = ({ children }) => {
           {/* Navbar */}
           <div
             className={`${
-              navBar ? "fixed bg-white text-black " : "bg-blue-900 text-white"
+              navBar
+                ? "fixed bg-white text-blue-900 "
+                : "bg-gray-100 text-blue-900"
             } w-full   navbar justify-between `}
             id="nav"
           >
@@ -90,9 +92,9 @@ const Layout = ({ children }) => {
             <Link href="/">
               <div className="flex-1 px-2 mx-2">
                 <div className="flex justify-center items-center ">
-                  <div className="m-3">
+                  {/* <div className="m-3">
                     <h3 className="text-sm">Euphoria Sports Management</h3>
-                  </div>
+                  </div> */}
                   <Image src={companyLogo} alt="company logo" width={100} />
                 </div>
               </div>

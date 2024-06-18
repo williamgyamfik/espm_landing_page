@@ -60,7 +60,7 @@ export default function Home() {
         <Team />
       </section>
 
-      <section className="bg-blue-900">
+      <section className="bg-gray-100">
         <GetStarted />
       </section>
 

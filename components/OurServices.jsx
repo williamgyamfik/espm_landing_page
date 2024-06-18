@@ -61,7 +61,7 @@ const OurServices = () => {
         <div className="grid p-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch  justify-items-center">
           {services.map((service) => {
             return (
-              <div>
+              <div key={service.id}>
                 <ServicesCard
                   id={service.id}
                   name={service.name}
