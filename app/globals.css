@@ -80,6 +80,6 @@ padding: 0;
 }
 
 .text-slide {
-  animation: slideInFromLeft 5s ease-out;
+  animation: slideInFromLeft 2s ease-out;
 }
 
