@@ -15,8 +15,8 @@ const GetStarted = () => {
         </div>
       </dialog>
       <div className="mx-auto py-16 text-blue-900">
-        <h1 className="text-5xl  text-center  p-5 font-bold">
-          Convinced yet ? Get started in 3 easy steps...
+        <h1 className="sm:text-5xl text-2xl text-center  p-5 font-bold">
+          Convinced yet? Get started in 3 easy steps...
         </h1>
         {/* <div className="w-full mt-12 sm:mb-10 text-white flex items-start justify-center flex-col  sm:flex-row">
           <div className="flex  mb-10 sm:mb-0">
@@ -52,8 +52,8 @@ const GetStarted = () => {
 
         <div className="flex justify-center ">
           <div className="grid grid-col-3 text-left">
-            <div className="flex justify-start items-center p-10">
-              <p className="text-2xl">
+            <div className="flex justify-start items-center p-5">
+              <p className="p-5">
                 <span className="text-sm p-2 ">1.</span>Fill in your details
               </p>
               <FontAwesomeIcon
@@ -62,8 +62,8 @@ const GetStarted = () => {
                 className="mx-2 "
               />
             </div>
-            <div className="flex justify-start items-center p-10">
-              <p className="text-2xl">
+            <div className="flex justify-start items-center p-5">
+              <p className="p-5">
                 <span className="text-sm p-2 ">2.</span>
                 Submit
               </p>
@@ -73,10 +73,10 @@ const GetStarted = () => {
                 className="mx-2 "
               />
             </div>
-            <div className="flex justify-start items-center p-10">
+            <div className="flex justify-start items-center p-5">
               <div>
-                <p className="text-2xl ">
-                  <span className="text-sm p-2 "> 3.</span> We get back to you
+                <p className="p-5">
+                  <span className="text-sm p-2 "> 3.</span> We get back
                   <span className="text-lime-500 font-bold "> ASAP</span>
                 </p>
               </div>
