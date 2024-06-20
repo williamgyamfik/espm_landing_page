@@ -19,21 +19,19 @@ export default function Home() {
               we develop and manage sports talents
             </h1>
 
-            <div className="mb-5 w-full">
-              <p
-                className="underline cursor-pointer hover:text-blue-900 uppercase"
-                role="button"
+            <div className="my-5 w-full ">
+              <button
+                className="btn w-64 mx-auto block rounded-none text-white hover:text-white bg-blue-900 hover:bg-green-500"
                 onClick={() =>
                   document.getElementById("my_modal_1").showModal()
                 }
               >
                 Click here to sign up
-              </p>
+              </button>
             </div>
           </div>
-          <div className=" ">
-            <Image src={hero} alt="hero image" priority="true" width="500" />
-          </div>
+
+          <Image src={hero} alt="hero image" priority="true" width="500" />
         </div>
 
         <dialog
@@ -67,15 +65,6 @@ export default function Home() {
       <section>
         <Subscribe />
       </section>
-
-      {/* <section className=" bg-blue-900" id="contact">
-        <div className="p-5">
-          <h1 className="text-3xl text-white text-center font-bold">
-            Contact{" "}
-          </h1>
-        </div>
-        <Contact />
-      </section> */}
     </>
   );
 }

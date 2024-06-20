@@ -2,45 +2,51 @@
 import React, { useState } from "react";
 import { Label } from "flowbite-react";
 import { supabase } from "../Utils/supabaseClient";
-import Spinner from "./Spinner";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-import countries from "@/Utils/countries";
+
+const initUserInput = {
+  first_name: "",
+  last_name: "",
+  Date_of_birth: "",
+  age: "",
+  gender: "",
+  email: "",
+  phone: "",
+  video_link: "",
+  otherSportsType: "",
+  sportsType: "",
+};
 
 const SignUpForm = () => {
   const [showSpinner, setShowSpinner] = useState();
   const [dob, setDob] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [userInput, setUserInput] = useState({
-    first_name: "",
-    last_name: "",
-    Date_of_birth: "",
-    age: "",
-    gender: "",
-    email: "",
-    phone: "",
-    video_link: "",
-    otherSportsType: "",
-    sportsType: "",
-  });
+  const [userInput, setUserInput] = useState(initUserInput);
 
   const userInputHandler = (e) => {
     const { name, value } = e.target;
+    setUserInput({ ...userInput, [name]: value });
+  };
 
+  const calculateAge = (dob) => {
     let age;
     const currentDate = new Date();
-    const birthYear = new Date(userInput.Date_of_birth);
+    const birthDate = new Date(dob);
 
-    if (
-      birthYear.getFullYear() >= currentDate.getFullYear() ||
-      birthYear.getFullYear() + 17 > currentDate.getFullYear()
-    ) {
-      setDob(true);
-      return;
-    } else {
-      age = currentDate.getFullYear() - birthYear.getFullYear();
+    age = currentDate.getFullYear() - birthDate.getFullYear();
+
+    if (birthDate.getMonth() > currentDate.getMonth()) {
+      age -= 1;
     }
-    setUserInput({ ...userInput, [name]: value });
+    return age;
+  };
+
+  const getMaximumDate = () => {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear() - 17;
+    currentDate.setFullYear(year);
+    return currentDate.toISOString().substring(0, 10);
   };
 
   const signUpHandler = async (e) => {
@@ -54,11 +60,11 @@ const SignUpForm = () => {
           {
             first_name: userInput.first_name,
             last_name: userInput.last_name,
-            email: userInput.last_name,
+            email: userInput.email,
             video_link: userInput.video_link,
             gender: userInput.gender,
             phone: phoneNumber,
-            age: +userInput.age,
+            age: calculateAge(userInput.Date_of_birth),
             Date_of_birth: userInput.Date_of_birth,
             sports_type:
               userInput.sportsType === "Other"
@@ -67,26 +73,13 @@ const SignUpForm = () => {
           },
         ])
         .select("*");
-      userInput.first_name = "";
-      userInput.last_name = "";
-      userInput.email = "";
-      userInput.age = "";
-      userInput.video_link = "";
-      userInput.gender = "";
-      setPhoneNumber((phoneNumber) => {
-        phoneNumber = "";
-      });
-      userInput.Date_of_birth = "";
-      userInput.otherSportsType = "";
-      userInput.sportsType = "";
+      setUserInput(initUserInput);
+      setPhoneNumber("");
     } catch (error) {}
     setDob(false);
     setShowSpinner(false);
   };
 
-  // if (showSpinner) {
-  //   <Spinner />;
-  // }
   return (
     <div className=" flex flex-col flex-1 pt-4 sm:px-0  ">
       <div className="flex flex-1 flex-col p-2 text-sm   shadow-xl text-blue-900 bg-blue-900">
@@ -150,6 +143,7 @@ const SignUpForm = () => {
                   name="Date_of_birth"
                   onChange={userInputHandler}
                   value={userInput?.Date_of_birth}
+                  max={getMaximumDate()}
                   required
                 />
                 {/* {dob ? (
@@ -250,8 +244,11 @@ const SignUpForm = () => {
               />
             </div>
             <div className="flex flex-wrap gap-5 my-5 justify-center center-align">
-              <button className="btn w-full sm:w-64 mx-auto block rounded-none focus:outline-blue-900 text-white border-blue-900 hover:text-white bg-blue-600 hover:bg-green-500">
-                SUBMIT
+              <button
+                className="btn w-full sm:w-64 mx-auto block rounded-none focus:outline-blue-900 text-white border-blue-900 hover:text-white bg-blue-600 hover:bg-green-500"
+                disabled={showSpinner}
+              >
+                {showSpinner ? "PLEASE WAIT..." : "SUBMIT"}
               </button>
               <button
                 type="button"
