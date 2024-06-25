@@ -91,7 +91,11 @@ const SignUpForm = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
               <div className="flex flex-col flex-wrap ">
                 <div className="mb-2 block">
-                  <Label className="" htmlFor="firstName1" value="First Name" />
+                  <Label
+                    className="text-white"
+                    htmlFor="firstName1"
+                    value="First Name"
+                  />
                 </div>
                 <input
                   className="bg-blue-300 p-2"
@@ -105,7 +109,11 @@ const SignUpForm = () => {
               </div>
               <div className="flex flex-col flex-wrap">
                 <div className="mb-2 block">
-                  <Label htmlFor="lastName1" value="Surname" />
+                  <Label
+                    className="text-white"
+                    htmlFor="lastName1"
+                    value="Surname"
+                  />
                 </div>
                 <input
                   className="bg-blue-300 p-2"
@@ -119,7 +127,11 @@ const SignUpForm = () => {
               </div>
               <div className="flex flex-col flex-wrap ">
                 <div className="mb-2 block">
-                  <Label htmlFor="email1" value="Email" />
+                  <Label
+                    className="text-white"
+                    htmlFor="email1"
+                    value="Email"
+                  />
                 </div>
                 <input
                   className="bg-blue-300 p-2"
@@ -134,7 +146,11 @@ const SignUpForm = () => {
 
               <div className="flex flex-col flex-wrap ">
                 <div className="mb-2 block">
-                  <Label htmlFor="dob1" value="Date of Birth" />
+                  <Label
+                    className="text-white"
+                    htmlFor="dob1"
+                    value="Date of Birth"
+                  />
                 </div>
                 <input
                   className=" p-2 bg-blue-300 "
@@ -154,7 +170,11 @@ const SignUpForm = () => {
               </div>
               <div className="flex flex-col flex-wrap ">
                 <div className="mb-2 block">
-                  <Label htmlFor="gender1" value="Gender" />
+                  <Label
+                    className="text-white"
+                    htmlFor="gender1"
+                    value="Gender"
+                  />
                 </div>
                 <select
                   id="gender1"
@@ -176,7 +196,11 @@ const SignUpForm = () => {
 
               <div className="flex flex-col flex-wrap ">
                 <div className="mb-2 block">
-                  <Label htmlFor="Phone1" value="Phone" />
+                  <Label
+                    className="text-white"
+                    htmlFor="Phone1"
+                    value="Phone"
+                  />
                 </div>
                 <div className="w-64 ">
                   <PhoneInput
@@ -197,7 +221,11 @@ const SignUpForm = () => {
 
               <div className="flex flex-col flex-wrap ">
                 <div className="mb-2 block">
-                  <Label htmlFor="sports_type1" value="Sports type" />
+                  <Label
+                    className="text-white"
+                    htmlFor="sports_type1"
+                    value="Sports type"
+                  />
                 </div>
                 <select
                   id="sports_type1"
@@ -231,7 +259,11 @@ const SignUpForm = () => {
             </div>
             <div className="flex flex-col mt-5">
               <div className="mb-2 block">
-                <Label htmlFor="video_link1" value="Video link" />
+                <Label
+                  className="text-white"
+                  htmlFor="video_link1"
+                  value="Video link"
+                />
               </div>
               <input
                 className="bg-blue-300 p-2"

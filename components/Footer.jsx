@@ -95,7 +95,7 @@ const Footer = () => {
         <div className="grid grid-flow-col gap-4">
           <div className="grid grid-flow-col gap-4">
             <a
-              href="https://www.instagram.com/sianosocceracademy?igsh=MTdzN3Qyd2k5c3Q5ag%3D%3D"
+              href="https://www.instagram.com/euphoria.sports_/"
               target="_blank"
             >
               <svg

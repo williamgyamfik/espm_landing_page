@@ -7,7 +7,7 @@ import talent1 from "../public/images/talent1.jpeg";
 const Blog = () => {
   return (
     <div className="container mx-auto p-10 m-10">
-      <h1 className="font-bold text-4xl">Player profile</h1>
+      <h1 className="font-bold text-4xl text-blue-900">Player profile</h1>
       <div className="border-b-2 border-b-blue-900"></div>
 
       <h2 className="mt-5 text-2xl">
